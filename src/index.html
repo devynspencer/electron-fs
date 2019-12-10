@@ -24,11 +24,29 @@
     </section>
     <section class="section">
       <div class="container">
+        <form>
+          <div class="field">
+            <label class="label" for="filepicker">File Select</label>
+            <div class="control">
+              <input
+                class="input"
+                type="file"
+                id="filepicker"
+                name="filepicker"
+                multiple
+              />
+            </div>
+            <p class="help">This is a help text</p>
+            <button class="button">View Metadata</button>
+          </div>
+        </form>
       </div>
     </section>
     <section class="section">
       <div class="container">
+        <pre id="file-data"></pre>
       </div>
     </section>
   </body>
+  <script src="./renderer.js"></script>
 </html>
