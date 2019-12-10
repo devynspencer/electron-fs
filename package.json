@@ -1,0 +1,22 @@
+{
+  "name": "electron-fs-metadata",
+  "version": "0.0.1",
+  "description": "Filesystem metadata viewer.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "metadata",
+    "filesystem",
+    "electron"
+  ],
+  "author": "Devyn Spencer",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^7.1.2"
+  },
+  "dependencies": {
+    "bulma": "^0.8.0"
+  }
+}
