@@ -4,7 +4,7 @@ const onFileSubmit = document.querySelector('form').addEventListener('submit', (
   // Prevent page refresh (default behavior)
   event.preventDefault();
 
-  const fileInputEl = document.getElementById('filepicker') as HTMLInputElement;
+  const fileInputEl = document.getElementById('fileInput') as HTMLInputElement;
 
   // Retrieve file data from file input
   const files = Array.from(fileInputEl.files).map((file) => ({
