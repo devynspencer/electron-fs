@@ -4,10 +4,13 @@ const onFileSubmit = document.querySelector('form').addEventListener('submit', (
   // Prevent page refresh (default behavior)
   event.preventDefault();
 
+  const fileInputEl = document.getElementById('filepicker') as HTMLInputElement;
+
   // Retrieve file data from file input
-  const files = Array.from(
-    (document.getElementById('filepicker') as HTMLInputElement).files
-  ).map((file) => ({ name: file.name, pathName: file['path'] }));
+  const files = Array.from(fileInputEl.files).map((file) => ({
+    name: file.name,
+    pathName: file['path']
+  }));
 
   // Send data to main process
   ipcRenderer.send('files', files);
