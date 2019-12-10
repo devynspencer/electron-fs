@@ -1,12 +1,12 @@
-const { app, BrowserWindow, ipcMain } = require("electron");
-const fs = require("fs");
-const path = require("path");
-const util = require("util");
+const { app, BrowserWindow, ipcMain } = require('electron');
+const fs = require('fs');
+const path = require('path');
+const util = require('util');
 const stat = util.promisify(fs.stat);
 
 let mainWindow;
 
-app.on("ready", () => {
+app.on('ready', () => {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
@@ -15,10 +15,10 @@ app.on("ready", () => {
     }
   });
 
-  mainWindow.loadFile(path.join("src", "index.html"));
+  mainWindow.loadFile(path.join('src', 'index.html'));
 });
 
-ipcMain.on("files", async (event, files) => {
+ipcMain.on('files', async (event, files) => {
   try {
     // Asynchronously get file data
     const data = await Promise.all(
@@ -29,8 +29,8 @@ ipcMain.on("files", async (event, files) => {
       }))
     );
 
-    mainWindow.webContents.send("metadata", data);
+    mainWindow.webContents.send('metadata', data);
   } catch (error) {
-    mainWindow.webContents.send("metadata:error", error);
+    mainWindow.webContents.send('metadata:error', error);
   }
 });
