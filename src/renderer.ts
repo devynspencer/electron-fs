@@ -5,16 +5,12 @@ const onFileSubmit = document.querySelector('form').addEventListener('submit', (
   event.preventDefault();
 
   // Retrieve file data from file input
-  const files = [...document.getElementById('filepicker').files];
-
-  // Condense file data only path and filename
-  const filesFormatted = files.map(({ name, path: pathName }) => ({
-    name,
-    pathName
-  }));
+  const files = Array.from(
+    (document.getElementById('filepicker') as HTMLInputElement).files
+  ).map((file) => ({ name: file.name, pathName: file['path'] }));
 
   // Send data to main process
-  ipcRenderer.send('files', filesFormatted);
+  ipcRenderer.send('files', files);
 });
 
 // Receive metadata from main process

@@ -15,7 +15,7 @@ app.on('ready', () => {
     }
   });
 
-  mainWindow.loadFile(path.join('src', 'index.html'));
+  mainWindow.loadFile(path.join(__dirname, '../src/index.html'));
 });
 
 ipcMain.on('files', async (event, files) => {
