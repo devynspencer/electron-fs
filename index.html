@@ -18,26 +18,30 @@
     </section>
     <section class="section">
       <div class="container">
-        <form>
-          <div class="field">
-            <div class="control has-icons-right">
-              <input class="input" type="file" id="fileInput" name="fileInput" multiple />
-              <span class="icon is-right">
-                <i class="fas fa-file"></i>
-              </span>
+        <div class="columns">
+          <div class="column is-one-third">
+            <form>
+              <div class="field">
+                <div class="control has-icons-right">
+                  <input class="input" type="file" id="fileInput" name="fileInput" multiple />
+                  <span class="icon is-right">
+                    <i class="fas fa-file"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="field">
+                <p class="control">
+                  <button class="button">View Metadata</button>
+                </p>
+              </div>
+            </form>
+          </div>
+          <div class="column">
+            <div class="container">
+              <pre id="file-data"></pre>
             </div>
           </div>
-          <div class="field">
-            <p class="control">
-              <button class="button">View Metadata</button>
-            </p>
-          </div>
-        </form>
-      </div>
-    </section>
-    <section class="section">
-      <div class="container">
-        <pre id="file-data"></pre>
+        </div>
       </div>
     </section>
   </body>
